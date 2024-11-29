@@ -1,0 +1,8 @@
+.Button {
+  color: white;
+  background-color: blue;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
