@@ -36,8 +36,11 @@ export default function Card() {
       </div>
       <div className="row">
         {publishedPosts.map((post) => (
-          <div className="col col-sm-12 col-xs-12 col-md-6 col-lg-4">
-            <div className="card w-75 mx-auto my-2 shadow-lg" key={post.id}>
+          <div
+            className="col col-sm-12 col-xs-12 col-md-6 col-lg-4"
+            key={post.id}
+          >
+            <div className="card w-75 mx-auto my-2 shadow-lg">
               <div>
                 <img
                   className="card-img-top img-fluid"
