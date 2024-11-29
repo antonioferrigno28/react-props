@@ -1,0 +1,23 @@
+.tags .badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.tag-html {
+  background-color: green;
+  color: white;
+}
+
+.tag-css {
+  background-color: red;
+  color: white;
+}
+
+.tag-js {
+  background-color: orange;
+  color: black;
+}
+
+.tag-php {
+  background-color: blue;
+  color: white;
+}
