@@ -53,8 +53,8 @@ export default function Card() {
                 <p className="card-text fs-5">{post.content}</p>
 
                 <div className="tags my-2">
-                  {post.tags.map((tag, index) => (
-                    <span key={index} className={`badge me-2 tag-${tag}`}>
+                  {post.tags.map((tag, id) => (
+                    <span key={id} className={`badge me-2 tag-${tag}`}>
                       {tag}
                     </span>
                   ))}
