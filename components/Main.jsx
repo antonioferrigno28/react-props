@@ -5,9 +5,7 @@ export default function Main() {
   return (
     <>
       <main className="py-1">
-        <div className="d-flex row row-cols-2">
-          <Card />
-        </div>
+        <Card />
       </main>
     </>
   );

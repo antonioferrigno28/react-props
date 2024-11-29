@@ -14,39 +14,58 @@ import { posts } from "../src/data/posts";
 
 export default function Card() {
   const publishedPosts = posts.filter((post) => post.published);
-
+  const uniqueTags = [];
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => {
+      if (!uniqueTags.includes(tag)) {
+        uniqueTags.push(tag);
+      }
+    });
+  });
   return (
     <>
-      {publishedPosts.map((post) => (
-        <div className="col">
-          <div className="card w-75 mx-auto my-2 shadow-lg" key={post.id}>
-            <div>
-              <img
-                className="card-img-top img-fluid"
-                src={post.image || placeholder}
-                alt={post.title}
-              />
-            </div>
-            <div className="card-body">
-              <h5 className="card-title fs-2">{post.title}</h5>
-              <p className="card-text fs-4">{post.content}</p>
-
-              <div className="tags my-2">
-                {post.tags.map((tag, index) => (
-                  <span key={index} className={`badge me-2 tag-${tag}`}>
-                    {tag}
-                  </span>
-                ))}
+      <div className="tags-section text-center py-4">
+        <h3 className="mb-3">Tags Disponibili</h3>
+        <div className="d-flex justify-content-center flex-wrap">
+          {uniqueTags.map((tag, index) => (
+            <span key={index} className={`badge me-2 mb-2 tag-${tag} fs-2`}>
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="row">
+        {publishedPosts.map((post) => (
+          <div className="col">
+            <div className="card w-75 mx-auto my-2 shadow-lg" key={post.id}>
+              <div>
+                <img
+                  className="card-img-top img-fluid"
+                  src={post.image || placeholder}
+                  alt={post.title}
+                />
               </div>
+              <div className="card-body">
+                <h5 className="card-title fs-2">{post.title}</h5>
+                <p className="card-text fs-5">{post.content}</p>
 
-              <button className="text-light bg-warning border-0 py-3 px-4">
-                LEGGI DI PIÙ
-              </button>
-              <Button />
+                <div className="tags my-2">
+                  {post.tags.map((tag, index) => (
+                    <span key={index} className={`badge me-2 tag-${tag}`}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="text-light bg-warning border-0 py-3 px-4">
+                  LEGGI DI PIÙ
+                </button>
+                <Button />
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 }
