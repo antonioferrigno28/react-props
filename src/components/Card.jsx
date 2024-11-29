@@ -8,9 +8,9 @@
 // Aggiungi una sezione nella pagina in cui mostrare la lista dei tag distinti senza ripetizioni.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-import placeholder from "../src/assets/img/placeholder.png";
+import placeholder from "../assets/img/placeholder.png";
 import Button from "../components/Button/Button";
-import { posts } from "../src/data/posts";
+import { posts } from "../data/posts";
 
 export default function Card() {
   const publishedPosts = posts.filter((post) => post.published);
@@ -36,7 +36,7 @@ export default function Card() {
       </div>
       <div className="row">
         {publishedPosts.map((post) => (
-          <div className="col">
+          <div className="col col-sm-12 col-xs-12 col-md-6 col-lg-4">
             <div className="card w-75 mx-auto my-2 shadow-lg" key={post.id}>
               <div>
                 <img

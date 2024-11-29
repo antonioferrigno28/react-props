@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "../components/Header";
-import Main from "../components/Main";
-import Footer from "../components/Footer";
+import Header from "../src/components/Header";
+import Main from "../src/components/Main";
+import Footer from "../src/components/Footer";
 
 function App() {
   return (
